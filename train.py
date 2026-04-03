@@ -239,7 +239,6 @@ class TimestepSampler:
             t = 1.0 / (1.0 + torch.exp(-u)) * (t1 - t0) + t0
             
         elif self.snr_type == SNRType.MIX:
-            # Mix sampling: 30% lognorm + 70% clipped uniform
             u = torch.normal(mean=0.0, std=1.0, size=(batch_size,), device=device)
             t_lognorm = 1.0 / (1.0 + torch.exp(-u)) * (t1 - t0) + t0
             
@@ -249,7 +248,6 @@ class TimestepSampler:
             t1_clip = t1 - delta
             t_clip_uniform = torch.rand((batch_size,), device=device) * (t1_clip - t0_clip) + t0_clip
             
-            # Mix with 30% lognorm, 70% uniform
             mask = (torch.rand((batch_size,), device=device) > 0.3).float()
             t = mask * t_lognorm + (1 - mask) * t_clip_uniform
             
@@ -584,8 +582,8 @@ class HunyuanVideoTrainer:
         self.lr_scheduler = get_scheduler(
             "constant",
             optimizer=self.optimizer,
-            num_warmup_steps=self.config.warmup_steps * self.world_size,
-            num_training_steps=self.config.max_steps * self.world_size,
+            num_warmup_steps=self.config.warmup_steps,
+            num_training_steps=self.config.max_steps,
         )
         
         if self.is_main_process:
@@ -990,14 +988,11 @@ class HunyuanVideoTrainer:
                 
                 if (self.global_step + 1) % self.config.save_interval == 0:
                     self.save_checkpoint(self.global_step + 1)
-                    if self.world_size > 1:
-                        dist.barrier()
                 
                 self.global_step += 1
         
-        if self.is_main_process:
-            self.save_checkpoint(self.global_step)
-            logger.info("Training completed!")
+        self.save_checkpoint(self.global_step)
+        logger.info("Training completed!")
         
         if self.world_size > 1:
             dist.barrier()
