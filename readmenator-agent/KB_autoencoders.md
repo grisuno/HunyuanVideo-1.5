@@ -1,0 +1,77 @@
+# Subsystem: autoencoders
+
+## hyvideo/models/autoencoders/__init__.py
+- Layer: business_logic
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
+- Language: py
+- Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`
+
+## hyvideo/models/autoencoders/hunyuanvideo_15_vae.py
+- Layer: business_logic
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
+- Language: py
+- Symbols:
+  - `DecoderOutput` (class, line 40) `class DecoderOutput(BaseOutput)`
+  - `swish` (method, line 45) `def swish(x, inplace)`
+  - `forward_with_checkpointing` (method, line 50) `def forward_with_checkpointing(module)`
+  - `PatchCausalConv3d` (class, line 65) `class PatchCausalConv3d(Conv3d)`
+  - `RMS_norm` (class, line 110) `class RMS_norm(Module)`
+  - `CausalConv3d` (class, line 129) `class CausalConv3d(Module)`
+  - `prepare_causal_attention_mask` (method, line 163) `def prepare_causal_attention_mask(n_frame, n_hw, dtype, device, batch_size)`
+  - `AttnBlock` (class, line 186) `class AttnBlock(Module)`
+  - `ResnetBlock` (class, line 219) `class ResnetBlock(Module)`
+  - `Downsample` (class, line 251) `class Downsample(Module)`
+  - `Upsample` (class, line 293) `class Upsample(Module)`
+  - `Encoder` (class, line 331) `class Encoder(Module)`
+  - `Decoder` (class, line 413) `class Decoder(Module)`
+  - `AutoencoderKLConv3D` (class, line 495) `class AutoencoderKLConv3D(ModelMixin, ConfigMixin)`
+  - `create_custom_forward` (method, line 52) `def create_custom_forward(module)`
+  - `find_split_indices` (method, line 67) `def find_split_indices(self, seq_len, part_num)`
+  - `forward` (method, line 86) `def forward(self, input)`
+  - `__init__` (method, line 113) `def __init__(self, dim, channel_first, images, bias)`
+  - `forward` (method, line 123) `def forward(self, x)`
+  - `__init__` (method, line 132) `def __init__(self, chan_in, chan_out, kernel_size, stride, dilation, pad_mode, disable_causal, enable_patch_conv)`
+  - `forward` (method, line 158) `def forward(self, x)`
+  - `__init__` (method, line 189) `def __init__(self, in_channels)`
+  - `attention` (method, line 200) `def attention(self, h_)`
+  - `forward` (method, line 215) `def forward(self, x)`
+  - `__init__` (method, line 222) `def __init__(self, in_channels, out_channels)`
+  - `forward` (method, line 236) `def forward(self, x)`
+  - `__init__` (method, line 253) `def __init__(self, in_channels, out_channels, add_temporal_downsample)`
+  - `forward` (method, line 261) `def forward(self, x)`
+  - `__init__` (method, line 296) `def __init__(self, in_channels, out_channels, add_temporal_upsample)`
+  - `forward` (method, line 303) `def forward(self, x)`
+  - `__init__` (method, line 334) `def __init__(self, in_channels, z_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, downsample_match_channel)`
+  - `forward` (method, line 386) `def forward(self, x)`
+  - `__init__` (method, line 416) `def __init__(self, z_channels, out_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, upsample_match_channel)`
+  - `forward` (method, line 468) `def forward(self, z)`
+  - `__init__` (method, line 500) `def __init__(self, in_channels, out_channels, latent_channels, block_out_channels, layers_per_block, ffactor_spatial, ffactor_temporal, sample_size, sample_tsize, scaling_factor, shift_factor, downsample_match_channel, upsample_match_channel)`
+  - `set_tile_sample_min_size` (method, line 554) `def set_tile_sample_min_size(self, sample_size, tile_overlap_factor)`
+  - `_set_gradient_checkpointing` (method, line 563) `def _set_gradient_checkpointing(self, module, value)`
+  - `enable_temporal_tiling` (method, line 569) `def enable_temporal_tiling(self, use_tiling)`
+  - `disable_temporal_tiling` (method, line 573) `def disable_temporal_tiling(self)`
+  - `enable_spatial_tiling` (method, line 576) `def enable_spatial_tiling(self, use_tiling)`
+  - `disable_spatial_tiling` (method, line 579) `def disable_spatial_tiling(self)`
+  - `enable_tiling` (method, line 582) `def enable_tiling(self, use_tiling)`
+  - `disable_tiling` (method, line 585) `def disable_tiling(self)`
+  - `enable_slicing` (method, line 588) `def enable_slicing(self)`
+  - `disable_slicing` (method, line 591) `def disable_slicing(self)`
+  - `blend_h` (method, line 594) `def blend_h(self, a, b, blend_extent)`
+  - `blend_v` (method, line 601) `def blend_v(self, a, b, blend_extent)`
+  - `blend_t` (method, line 608) `def blend_t(self, a, b, blend_extent)`
+  - `spatial_tiled_encode` (method, line 615) `def spatial_tiled_encode(self, x)`
+  - `temporal_tiled_encode` (method, line 643) `def temporal_tiled_encode(self, x)`
+  - `enable_tile_parallelism` (method, line 671) `def enable_tile_parallelism(self)`
+  - `disable_tile_parallelism` (method, line 674) `def disable_tile_parallelism(self)`
+  - `tile_parallel_spatial_tiled_decode` (method, line 677) `def tile_parallel_spatial_tiled_decode(self, z)`
+  - `spatial_tiled_decode` (method, line 772) `def spatial_tiled_decode(self, z)`
+  - `temporal_tiled_decode` (method, line 803) `def temporal_tiled_decode(self, z)`
+  - `encode` (method, line 833) `def encode(self, x, return_dict)`
+  - `decode` (method, line 856) `def decode(self, z, return_dict, generator)`
+  - `forward` (method, line 876) `def forward(self, sample, sample_posterior, return_posterior, return_dict)`
+  - `memory_efficient_context` (method, line 890) `def memory_efficient_context(self)`
+  - `custom_forward` (method, line 53) `def custom_forward()`
+  - `_encode` (method, line 835) `def _encode(x)`
+  - `_decode` (method, line 858) `def _decode(z)`
+- Depends on: `hyvideo/commons/parallel_states.py`
+- Imported by: `hyvideo/models/transformers/modules/upsample.py`
