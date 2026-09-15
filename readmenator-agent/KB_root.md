@@ -1,0 +1,68 @@
+# Subsystem: root
+
+## generate.py
+- Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
+- Language: py
+- Symbols:
+  - `save_video` (function, line 42) `def save_video(video, path)`
+  - `rank0_log` (function, line 50) `def rank0_log(message, level)`
+  - `save_config` (function, line 54) `def save_config(args, output_path, task, transformer_version)`
+  - `str_to_bool` (function, line 81) `def str_to_bool(value)`
+  - `load_checkpoint_to_transformer` (function, line 96) `def load_checkpoint_to_transformer(pipe, checkpoint_path)`
+  - `load_lora_adapter` (function, line 112) `def load_lora_adapter(pipe, lora_path)`
+  - `generate_video` (function, line 128) `def generate_video(args)`
+  - `main` (function, line 274) `def main()`
+- Depends on: `hyvideo/commons/infer_state.py`, `hyvideo/commons/parallel_states.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`
+
+## train.py
+- Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
+- Language: py
+- Symbols:
+  - `SNRType` (class, line 91) `class SNRType(str, Enum)`
+  - `str_to_bool` (method, line 98) `def str_to_bool(value)`
+  - `save_video` (method, line 114) `def save_video(video, path)`
+  - `TrainingConfig` (class, line 124) `class TrainingConfig`
+  - `LinearInterpolationSchedule` (class, line 186) `class LinearInterpolationSchedule`
+  - `TimestepSampler` (class, line 204) `class TimestepSampler`
+  - `timestep_transform` (method, line 269) `def timestep_transform(timesteps, T, shift)`
+  - `is_src` (method, line 278) `def is_src(src, group_src, group)`
+  - `broadcast_object` (method, line 287) `def broadcast_object(obj, src, group, device, group_src)`
+  - `broadcast_tensor` (method, line 305) `def broadcast_tensor(tensor, src, group, async_op, group_src)`
+  - `sync_tensor_for_sp` (method, line 333) `def sync_tensor_for_sp(tensor, sp_group)`
+  - `HunyuanVideoTrainer` (class, line 347) `class HunyuanVideoTrainer`
+  - `create_dummy_dataloader` (method, line 1047) `def create_dummy_dataloader(config)`
+  - `main` (method, line 1144) `def main()`
+  - `__init__` (method, line 188) `def __init__(self, T)`
+  - `forward` (method, line 191) `def forward(self, x0, x1, t)`
+  - `__init__` (method, line 209) `def __init__(self, T, device, snr_type)`
+  - `_check_interval` (method, line 219) `def _check_interval(self, eval)`
+  - `sample` (method, line 226) `def sample(self, batch_size, device)`
+  - `__init__` (method, line 348) `def __init__(self, config)`
+  - `_set_seed` (method, line 406) `def _set_seed(self, seed)`
+  - `_build_models` (method, line 412) `def _build_models(self)`
+  - `_apply_lora` (method, line 464) `def _apply_lora(self)`
+  - `_apply_fsdp` (method, line 498) `def _apply_fsdp(self)`
+  - `_apply_gradient_checkpointing` (method, line 529) `def _apply_gradient_checkpointing(self)`
+  - `_build_optimizer` (method, line 565) `def _build_optimizer(self)`
+  - `encode_text` (method, line 592) `def encode_text(self, prompts, data_type)`
+  - `encode_byt5` (method, line 608) `def encode_byt5(self, text_ids, attention_mask)`
+  - `encode_images` (method, line 615) `def encode_images(self, images)`
+  - `encode_vae` (method, line 625) `def encode_vae(self, images)`
+  - `get_condition` (method, line 641) `def get_condition(self, latents, task_type)`
+  - `sample_task` (method, line 654) `def sample_task(self, data_type)`
+  - `prepare_batch` (method, line 671) `def prepare_batch(self, batch)`
+  - `train_step` (method, line 776) `def train_step(self, batch)`
+  - `save_checkpoint` (method, line 828) `def save_checkpoint(self, step)`
+  - `load_pretrained_lora` (method, line 892) `def load_pretrained_lora(self, lora_dir)`
+  - `load_checkpoint` (method, line 901) `def load_checkpoint(self, checkpoint_path)`
+  - `train` (method, line 959) `def train(self, dataloader)`
+  - `validate` (method, line 1001) `def validate(self, step)`
+  - `DummyDataset` (class, line 1108) `class DummyDataset`
+  - `non_reentrant_wrapper` (method, line 547) `def non_reentrant_wrapper(module)`
+  - `selective_checkpointing` (method, line 553) `def selective_checkpointing(submodule)`
+  - `__init__` (method, line 1109) `def __init__(self, size)`
+  - `__len__` (method, line 1112) `def __len__(self)`
+  - `__getitem__` (method, line 1115) `def __getitem__(self, idx)`
+- Depends on: `hyvideo/commons/parallel_states.py`, `hyvideo/optim/muon.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`
