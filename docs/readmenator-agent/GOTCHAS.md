@@ -1,0 +1,57 @@
+# Gotchas
+
+## God Nodes (high connectivity)
+
+These files have the most connections. Changes here have high blast radius.
+
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` (score: 40.30, imported by 3 files)
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` (score: 30.20, imported by 2 files)
+- `hyvideo/commons/__init__.py` (score: 17.20, imported by 8 files)
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` (score: 17.00, imported by 1 files)
+- `hyvideo/models/transformers/modules/token_refiner.py` (score: 14.90, imported by 1 files)
+- `hyvideo/commons/parallel_states.py` (score: 14.80, imported by 7 files)
+- `hyvideo/models/transformers/modules/attention.py` (score: 14.60, imported by 2 files)
+- `train.py` (score: 10.50)
+- `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py` (score: 10.20, imported by 1 files)
+- `hyvideo/models/transformers/modules/mlp_layers.py` (score: 9.20, imported by 2 files)
+
+## Blast Radius (change impact)
+
+Editing these files can break the listed number of dependents. Run their tests after any change.
+
+- `hyvideo/commons/__init__.py` -- 8 direct, 11 total dependents
+- `hyvideo/commons/parallel_states.py` -- 7 direct, 9 total dependents
+- `hyvideo/models/transformers/modules/modulate_layers.py` -- 3 direct, 7 total dependents
+- `hyvideo/models/transformers/modules/ssta_attention.py` -- 1 direct, 7 total dependents
+- `hyvideo/utils/communications.py` -- 2 direct, 7 total dependents
+- `hyvideo/utils/flash_attn_no_pad.py` -- 1 direct, 7 total dependents
+- `hyvideo/models/transformers/modules/activation_layers.py` -- 2 direct, 6 total dependents
+- `hyvideo/models/transformers/modules/attention.py` -- 2 direct, 6 total dependents
+- `hyvideo/models/transformers/modules/embed_layers.py` -- 2 direct, 6 total dependents
+- `hyvideo/models/transformers/modules/mlp_layers.py` -- 2 direct, 6 total dependents
+
+## Hotspots (complexity + centrality)
+
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -- complexity: 0.7, centrality: 1.0, combined: 0.9
+- `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py` -- complexity: 1.0, centrality: 0.3, combined: 0.6
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -- complexity: 0.4, centrality: 0.7, combined: 0.6
+- `train.py` -- complexity: 0.7, centrality: 0.4, combined: 0.5
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -- complexity: 0.2, centrality: 0.5, combined: 0.3
+- `hyvideo/commons/__init__.py` -- complexity: 0.2, centrality: 0.4, combined: 0.3
+- `generate.py` -- complexity: 0.1, centrality: 0.3, combined: 0.2
+- `hyvideo/models/transformers/modules/attention.py` -- complexity: 0.1, centrality: 0.3, combined: 0.2
+- `hyvideo/utils/rewrite/clients.py` -- complexity: 0.2, centrality: 0.2, combined: 0.2
+- `hyvideo/models/transformers/modules/token_refiner.py` -- complexity: 0.1, centrality: 0.3, combined: 0.2
+
+## Dependency Cycles
+
+Circular dependencies. Refactor to break the cycle.
+
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/pipelines/hunyuan_video_pipeline.py`
+
+## Dataflow Issues (INFERRED, review each lead)
+
+- `hyvideo/__init__.py:26` `find_free_port` [UNCHECKED_ALLOC] `sock`: Result of allocator stored in `sock` is never checked against NULL.
+- `hyvideo/pipelines/hunyuan_video_pipeline.py:985` `__call__` [UNCHECKED_ALLOC] `reference_image`: Result of allocator stored in `reference_image` is never checked against NULL.
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:228` `__call__` [UNCHECKED_ALLOC] `reference_image`: Result of allocator stored in `reference_image` is never checked against NULL.
+- `hyvideo/utils/rewrite/clients.py:155` `_encode_image_to_base64` [UNCHECKED_ALLOC] `image`: Result of allocator stored in `image` is never checked against NULL.
