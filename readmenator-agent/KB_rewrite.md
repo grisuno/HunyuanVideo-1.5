@@ -1,8 +1,8 @@
 # Subsystem: rewrite
 
 ## hyvideo/utils/rewrite/clients.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: infrastructure
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `NonStreamResponse` (class, line 29) `class NonStreamResponse(object)`
@@ -23,14 +23,14 @@
 - Imported by: `hyvideo/utils/rewrite/rewrite_utils.py`
 
 ## hyvideo/utils/rewrite/i2v_prompt.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Imported by: `hyvideo/utils/rewrite/rewrite_utils.py`
 
 ## hyvideo/utils/rewrite/rewrite_utils.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `t2v_rewrite` (function, line 22) `def t2v_rewrite(user_prompt, rewrite_client)`
@@ -40,7 +40,7 @@
 - Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`
 
 ## hyvideo/utils/rewrite/t2v_prompt.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Imported by: `hyvideo/utils/rewrite/rewrite_utils.py`

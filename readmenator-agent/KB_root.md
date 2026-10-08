@@ -1,8 +1,8 @@
 # Subsystem: root
 
 ## generate.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `save_video` (function, line 42) `def save_video(video, path)`
@@ -16,8 +16,8 @@
 - Depends on: `hyvideo/commons/infer_state.py`, `hyvideo/commons/parallel_states.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`
 
 ## train.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `SNRType` (class, line 91) `class SNRType(str, Enum)`

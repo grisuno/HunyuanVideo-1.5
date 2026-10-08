@@ -53,9 +53,9 @@
 | `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:222` | `def __init__(self, in_channels, out_channels)` |
 | `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:253` | `def __init__(self, in_channels, out_channels, add_temporal_downsample)` |
 | `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:296` | `def __init__(self, in_channels, out_channels, add_temporal_upsample)` |
-| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:334` | `def __init__(self, in_channels, z_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal...` |
-| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:416` | `def __init__(self, z_channels, out_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal...` |
-| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:500` | `def __init__(self, in_channels, out_channels, latent_channels, block_out_channels, layers_per_block...` |
+| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:334` | `def __init__(self, in_channels, z_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, downs` |
+| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:416` | `def __init__(self, z_channels, out_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, upsa` |
+| `__init__` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:500` | `def __init__(self, in_channels, out_channels, latent_channels, block_out_channels, layers_per_block, ffactor_spatial, ff` |
 | `_decode` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:858` | `def _decode(z)` |
 | `_encode` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:835` | `def _encode(x)` |
 | `_set_gradient_checkpointing` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:563` | `def _set_gradient_checkpointing(self, module, value)` |
@@ -100,13 +100,13 @@
 | `tile_parallel_spatial_tiled_decode` | method | `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py:677` | `def tile_parallel_spatial_tiled_decode(self, z)` |
 | `TextEncoder` | class | `hyvideo/models/text_encoders/__init__.py:154` | `class TextEncoder(Module)` |
 | `TextEncoderModelOutput` | class | `hyvideo/models/text_encoders/__init__.py:131` | `class TextEncoderModelOutput(ModelOutput)` |
-| `__init__` | method | `hyvideo/models/text_encoders/__init__.py:155` | `def __init__(self, text_encoder_type, max_length, text_encoder_precision, text_encoder_path, tokenizer_type...` |
+| `__init__` | method | `hyvideo/models/text_encoders/__init__.py:155` | `def __init__(self, text_encoder_type, max_length, text_encoder_precision, text_encoder_path, tokenizer_type, tokenizer_p` |
 | `__repr__` | method | `hyvideo/models/text_encoders/__init__.py:252` | `def __repr__(self)` |
 | `apply_text_to_template` | method | `hyvideo/models/text_encoders/__init__.py:256` | `def apply_text_to_template(text, template, prevent_empty_text)` |
 | `calculate_crop_start` | method | `hyvideo/models/text_encoders/__init__.py:281` | `def calculate_crop_start(self, tokenized_input)` |
 | `device` | method | `hyvideo/models/text_encoders/__init__.py:249` | `def device(self)` |
 | `dtype` | method | `hyvideo/models/text_encoders/__init__.py:245` | `def dtype(self)` |
-| `encode` | method | `hyvideo/models/text_encoders/__init__.py:415` | `def encode(self, batch_encoding, use_attention_mask, output_hidden_states, do_sample, hidden_state_skip_layer...` |
+| `encode` | method | `hyvideo/models/text_encoders/__init__.py:415` | `def encode(self, batch_encoding, use_attention_mask, output_hidden_states, do_sample, hidden_state_skip_layer, return_te` |
 | `forward` | method | `hyvideo/models/text_encoders/__init__.py:487` | `def forward(self, text, use_attention_mask, output_hidden_states, do_sample, hidden_state_skip_layer, return_texts)` |
 | `load_text_encoder` | function | `hyvideo/models/text_encoders/__init__.py:84` | `def load_text_encoder(text_encoder_type, text_encoder_precision, text_encoder_path, logger, device)` |
 | `load_tokenizer` | function | `hyvideo/models/text_encoders/__init__.py:114` | `def load_tokenizer(tokenizer_type, tokenizer_path, padding_side, logger)` |
@@ -117,7 +117,7 @@
 | `add_special_token` | function | `hyvideo/models/text_encoders/byT5/__init__.py:89` | `def add_special_token(tokenizer, text_encoder, add_color, add_font, color_ann_path, font_ann_path, multilingual)` |
 | `create_byt5` | function | `hyvideo/models/text_encoders/byT5/__init__.py:43` | `def create_byt5(args, device)` |
 | `forward` | method | `hyvideo/models/text_encoders/byT5/__init__.py:210` | `def forward(self, x)` |
-| `load_byt5_and_byt5_tokenizer` | function | `hyvideo/models/text_encoders/byT5/__init__.py:131` | `def load_byt5_and_byt5_tokenizer(byt5_name, special_token, color_special_token, font_special_token, color_ann_path...` |
+| `load_byt5_and_byt5_tokenizer` | function | `hyvideo/models/text_encoders/byT5/__init__.py:131` | `def load_byt5_and_byt5_tokenizer(byt5_name, special_token, color_special_token, font_special_token, color_ann_path, font` |
 | `load_glyph_byT5_v2` | function | `hyvideo/models/text_encoders/byT5/__init__.py:23` | `def load_glyph_byT5_v2(args, device)` |
 | `MultilingualPromptFormat` | class | `hyvideo/models/text_encoders/byT5/format_prompt.py:44` | `class MultilingualPromptFormat` |
 | `__init__` | method | `hyvideo/models/text_encoders/byT5/format_prompt.py:46` | `def __init__(self, font_path, color_path)` |
@@ -127,9 +127,9 @@
 | `HunyuanVideo_1_5_DiffusionTransformer` | class | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:316` | `class HunyuanVideo_1_5_DiffusionTransformer(ModelMixin, ConfigMixin, PeftAdapterMixin)` |
 | `MMDoubleStreamBlock` | class | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:45` | `class MMDoubleStreamBlock(Module)` |
 | `MMSingleStreamBlock` | class | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:208` | `class MMSingleStreamBlock(Module)` |
-| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:47` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_act_type, attn_mode, qk_norm, qk_norm_type...` |
-| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:210` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_act_type, attn_mode, qk_norm, qk_norm_type...` |
-| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:351` | `def __init__(self, patch_size, in_channels, concat_condition, out_channels, hidden_size, heads_num, mlp_width_ratio...` |
+| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:47` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_act_type, attn_mode, qk_norm, qk_norm_type, qkv_bias, dt` |
+| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:210` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_act_type, attn_mode, qk_norm, qk_norm_type, qk_scale, dt` |
+| `__init__` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:351` | `def __init__(self, patch_size, in_channels, concat_condition, out_channels, hidden_size, heads_num, mlp_width_ratio, mlp` |
 | `disable_deterministic` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:114` | `def disable_deterministic(self)` |
 | `disable_deterministic` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:258` | `def disable_deterministic(self)` |
 | `disable_deterministic` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:607` | `def disable_deterministic(self)` |
@@ -138,7 +138,7 @@
 | `enable_deterministic` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:601` | `def enable_deterministic(self)` |
 | `forward` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:117` | `def forward(self, img, txt, vec, freqs_cis, text_mask, attn_param, is_flash, block_idx)` |
 | `forward` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:261` | `def forward(self, x, vec, txt_len, freqs_cis, text_mask, attn_param, is_flash)` |
-| `forward` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:667` | `def forward(self, hidden_states, timestep, text_states, text_states_2, encoder_attention_mask, timestep_r...` |
+| `forward` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:667` | `def forward(self, hidden_states, timestep, text_states, text_states_2, encoder_attention_mask, timestep_r, vision_states` |
 | `get_rotary_pos_embed` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:613` | `def get_rotary_pos_embed(self, rope_sizes)` |
 | `load_hunyuan_state_dict` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:563` | `def load_hunyuan_state_dict(self, model_path)` |
 | `reorder_txt_token` | method | `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py:631` | `def reorder_txt_token(self, byt5_txt, txt, byt5_text_mask, text_mask, zero_feat, is_reorder)` |
@@ -158,7 +158,7 @@
 | `TextProjection` | class | `hyvideo/models/transformers/modules/embed_layers.py:90` | `class TextProjection(Module)` |
 | `TimestepEmbedder` | class | `hyvideo/models/transformers/modules/embed_layers.py:178` | `class TimestepEmbedder(Module)` |
 | `VisionProjection` | class | `hyvideo/models/transformers/modules/embed_layers.py:122` | `class VisionProjection(Module)` |
-| `__init__` | method | `hyvideo/models/transformers/modules/embed_layers.py:37` | `def __init__(self, patch_size, in_chans, embed_dim, is_reshape_temporal_channels, concat_condition, norm_layer...` |
+| `__init__` | method | `hyvideo/models/transformers/modules/embed_layers.py:37` | `def __init__(self, patch_size, in_chans, embed_dim, is_reshape_temporal_channels, concat_condition, norm_layer, flatten,` |
 | `__init__` | method | `hyvideo/models/transformers/modules/embed_layers.py:97` | `def __init__(self, in_channels, hidden_size, act_layer, dtype, device)` |
 | `__init__` | method | `hyvideo/models/transformers/modules/embed_layers.py:124` | `def __init__(self, input_dim, output_dim)` |
 | `__init__` | method | `hyvideo/models/transformers/modules/embed_layers.py:140` | `def __init__(self, in_channels, out_channels)` |
@@ -173,7 +173,7 @@
 | `LinearWarpforSingle` | class | `hyvideo/models/transformers/modules/mlp_layers.py:70` | `class LinearWarpforSingle(Module)` |
 | `MLP` | class | `hyvideo/models/transformers/modules/mlp_layers.py:29` | `class MLP(Module)` |
 | `MLPEmbedder` | class | `hyvideo/models/transformers/modules/mlp_layers.py:82` | `class MLPEmbedder(Module)` |
-| `__init__` | method | `hyvideo/models/transformers/modules/mlp_layers.py:32` | `def __init__(self, in_channels, hidden_channels, out_features, act_layer, norm_layer, bias, drop, use_conv, device...` |
+| `__init__` | method | `hyvideo/models/transformers/modules/mlp_layers.py:32` | `def __init__(self, in_channels, hidden_channels, out_features, act_layer, norm_layer, bias, drop, use_conv, device, dtyp` |
 | `__init__` | method | `hyvideo/models/transformers/modules/mlp_layers.py:71` | `def __init__(self, in_dim, out_dim, bias, device, dtype)` |
 | `__init__` | method | `hyvideo/models/transformers/modules/mlp_layers.py:85` | `def __init__(self, in_dim, hidden_dim, device, dtype)` |
 | `__init__` | method | `hyvideo/models/transformers/modules/mlp_layers.py:99` | `def __init__(self, hidden_size, patch_size, out_channels, act_layer, device, dtype)` |
@@ -201,23 +201,23 @@
 | `get_nd_rotary_pos_embed` | function | `hyvideo/models/transformers/modules/posemb_layers.py:210` | `def get_nd_rotary_pos_embed(rope_dim_list, start)` |
 | `reshape_for_broadcast` | function | `hyvideo/models/transformers/modules/posemb_layers.py:83` | `def reshape_for_broadcast(freqs_cis, x, head_first)` |
 | `rotate_half` | function | `hyvideo/models/transformers/modules/posemb_layers.py:151` | `def rotate_half(x)` |
-| `create_moba_3d_mask` | function | `hyvideo/models/transformers/modules/ssta_attention.py:170` | `def create_moba_3d_mask(q, k, canvas_thw, topk, tile_thw, kernel_thw, text_block_num, add_text_mask, threshold...` |
-| `create_ssta_3d_mask` | function | `hyvideo/models/transformers/modules/ssta_attention.py:404` | `def create_ssta_3d_mask(q, k, canvas_thw, topk, tile_thw, kernel_thw, text_block_num, threshold, lambda_, text_mask...` |
+| `create_moba_3d_mask` | function | `hyvideo/models/transformers/modules/ssta_attention.py:170` | `def create_moba_3d_mask(q, k, canvas_thw, topk, tile_thw, kernel_thw, text_block_num, add_text_mask, threshold, lambda_,` |
+| `create_ssta_3d_mask` | function | `hyvideo/models/transformers/modules/ssta_attention.py:404` | `def create_ssta_3d_mask(q, k, canvas_thw, topk, tile_thw, kernel_thw, text_block_num, threshold, lambda_, text_mask, mas` |
 | `create_sta_3d_mask` | function | `hyvideo/models/transformers/modules/ssta_attention.py:374` | `def create_sta_3d_mask(canvas_thw, tile_thw, kernel_thw, text_block_num)` |
 | `create_sta_3d_mask_optimize` | function | `hyvideo/models/transformers/modules/ssta_attention.py:323` | `def create_sta_3d_mask_optimize(canvas_thw, tile_thw, kernel_thw)` |
 | `get_block_avg_feat` | function | `hyvideo/models/transformers/modules/ssta_attention.py:216` | `def get_block_avg_feat(x, adaptive_pool, pooling_type)` |
 | `get_tile_t_h_w` | function | `hyvideo/models/transformers/modules/ssta_attention.py:82` | `def get_tile_t_h_w(tile_id, tile_thw_dim)` |
 | `importance_sampling` | function | `hyvideo/models/transformers/modules/ssta_attention.py:90` | `def importance_sampling(q, k, topk, threshold, lambda_, adaptive_pool)` |
 | `similarity_sampling` | function | `hyvideo/models/transformers/modules/ssta_attention.py:126` | `def similarity_sampling(q, k, topk, threshold, block_num, adaptive_pool, temperature)` |
-| `ssta_3d_attention` | function | `hyvideo/models/transformers/modules/ssta_attention.py:465` | `def ssta_3d_attention(all_q, all_k, all_v, canvas_thw, topk, tile_thw, kernel_thw, text_len, sparse_type, threshold...` |
+| `ssta_3d_attention` | function | `hyvideo/models/transformers/modules/ssta_attention.py:465` | `def ssta_3d_attention(all_q, all_k, all_v, canvas_thw, topk, tile_thw, kernel_thw, text_len, sparse_type, threshold, lam` |
 | `tile` | function | `hyvideo/models/transformers/modules/ssta_attention.py:23` | `def tile(x, canvas_thw, tile_thw, sp_size)` |
 | `untile` | function | `hyvideo/models/transformers/modules/ssta_attention.py:53` | `def untile(x, canvas_thw, tile_thw, sp_size)` |
 | `IndividualTokenRefiner` | class | `hyvideo/models/transformers/modules/token_refiner.py:127` | `class IndividualTokenRefiner(Module)` |
 | `IndividualTokenRefinerBlock` | class | `hyvideo/models/transformers/modules/token_refiner.py:33` | `class IndividualTokenRefinerBlock(Module)` |
 | `SingleTokenRefiner` | class | `hyvideo/models/transformers/modules/token_refiner.py:203` | `class SingleTokenRefiner(Module)` |
-| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:50` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm, qk_norm_type...` |
-| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:145` | `def __init__(self, hidden_size, heads_num, depth, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm, qk_norm_type...` |
-| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:222` | `def __init__(self, in_channels, hidden_size, heads_num, depth, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm...` |
+| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:50` | `def __init__(self, hidden_size, heads_num, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm, qk_norm_type, qkv_bias, dt` |
+| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:145` | `def __init__(self, hidden_size, heads_num, depth, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm, qk_norm_type, qkv_b` |
+| `__init__` | method | `hyvideo/models/transformers/modules/token_refiner.py:222` | `def __init__(self, in_channels, hidden_size, heads_num, depth, mlp_width_ratio, mlp_drop_rate, act_type, qk_norm, qk_nor` |
 | `forward` | method | `hyvideo/models/transformers/modules/token_refiner.py:98` | `def forward(self, x, c, attn_mask)` |
 | `forward` | method | `hyvideo/models/transformers/modules/token_refiner.py:178` | `def forward(self, x, c, mask)` |
 | `forward` | method | `hyvideo/models/transformers/modules/token_refiner.py:256` | `def forward(self, x, t, mask)` |
@@ -234,7 +234,7 @@
 | `forward` | method | `hyvideo/models/transformers/modules/upsample.py:137` | `def forward(self, z, target_shape)` |
 | `VisionEncoder` | class | `hyvideo/models/vision_encoder/__init__.py:104` | `class VisionEncoder(Module)` |
 | `VisionEncoderModelOutput` | class | `hyvideo/models/vision_encoder/__init__.py:83` | `class VisionEncoderModelOutput(ModelOutput)` |
-| `__init__` | method | `hyvideo/models/vision_encoder/__init__.py:105` | `def __init__(self, vision_encoder_type, vision_encoder_precision, vision_encoder_path, processor_type...` |
+| `__init__` | method | `hyvideo/models/vision_encoder/__init__.py:105` | `def __init__(self, vision_encoder_type, vision_encoder_precision, vision_encoder_path, processor_type, processor_path, o` |
 | `__repr__` | method | `hyvideo/models/vision_encoder/__init__.py:149` | `def __repr__(self)` |
 | `encode_images` | method | `hyvideo/models/vision_encoder/__init__.py:179` | `def encode_images(self, images)` |
 | `encode_latents` | method | `hyvideo/models/vision_encoder/__init__.py:205` | `def encode_latents(self, latents, vae, reorg_token)` |
@@ -251,8 +251,8 @@
 | `zeropower_via_newtonschulz5` | function | `hyvideo/optim/muon.py:17` | `def zeropower_via_newtonschulz5(G, steps)` |
 | `HunyuanVideoPipelineOutput` | class | `hyvideo/pipelines/hunyuan_video_pipeline.py:82` | `class HunyuanVideoPipelineOutput(BaseOutput)` |
 | `HunyuanVideo_1_5_Pipeline` | class | `hyvideo/pipelines/hunyuan_video_pipeline.py:87` | `class HunyuanVideo_1_5_Pipeline(DiffusionPipeline)` |
-| `__call__` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:886` | `def __call__(self, prompt, aspect_ratio, video_length, prompt_rewrite, num_inference_steps, guidance_scale...` |
-| `__init__` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:92` | `def __init__(self, vae, text_encoder, transformer, scheduler, text_encoder_2, flow_shift, guidance_scale...` |
+| `__call__` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:886` | `def __call__(self, prompt, aspect_ratio, video_length, prompt_rewrite, num_inference_steps, guidance_scale, enable_sr, s` |
+| `__init__` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:92` | `def __init__(self, vae, text_encoder, transformer, scheduler, text_encoder_2, flow_shift, guidance_scale, num_inference_` |
 | `_create_scheduler` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:185` | `def _create_scheduler(cls, flow_shift)` |
 | `_extract_glyph_texts` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:573` | `def _extract_glyph_texts(self, prompt)` |
 | `_load_byt5` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:194` | `def _load_byt5(cls, cached_folder, glyph_byT5_v2, byt5_max_length, device)` |
@@ -264,11 +264,11 @@
 | `_process_single_byt5_prompt` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:589` | `def _process_single_byt5_prompt(self, prompt_text, device)` |
 | `apply_infer_optimization` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1335` | `def apply_infer_optimization(self, infer_state, enable_offloading, enable_group_offloading, overlap_group_offloading)` |
 | `clip_skip` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:525` | `def clip_skip(self)` |
-| `create_pipeline` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1467` | `def create_pipeline(cls, pretrained_model_name_or_path, transformer_version, create_sr_pipeline, transformer_dtype...` |
+| `create_pipeline` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1467` | `def create_pipeline(cls, pretrained_model_name_or_path, transformer_version, create_sr_pipeline, transformer_dtype, devi` |
 | `create_sr_pipeline` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1426` | `def create_sr_pipeline(self, cached_folder, sr_version, transformer_dtype, device)` |
 | `cross_attention_kwargs` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:536` | `def cross_attention_kwargs(self)` |
 | `do_classifier_free_guidance` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:532` | `def do_classifier_free_guidance(self)` |
-| `encode_prompt` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:242` | `def encode_prompt(self, prompt, device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt...` |
+| `encode_prompt` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:242` | `def encode_prompt(self, prompt, device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt, prompt_embe` |
 | `extract_image_features` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:680` | `def extract_image_features(self, reference_image)` |
 | `get_byt5_text_tokens` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:548` | `def get_byt5_text_tokens(byt5_tokenizer, byt5_max_length, text_prompt)` |
 | `get_closest_resolution_given_original_size` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:800` | `def get_closest_resolution_given_original_size(self, origin_size, target_size)` |
@@ -288,7 +288,7 @@
 | `load_sr_transformer_upsampler` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1416` | `def load_sr_transformer_upsampler(cls, cached_folder, sr_version, transformer_dtype, device)` |
 | `num_timesteps` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:540` | `def num_timesteps(self)` |
 | `prepare_extra_func_kwargs` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:413` | `def prepare_extra_func_kwargs(self, func, kwargs)` |
-| `prepare_latents` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:429` | `def prepare_latents(self, batch_size, num_channels_latents, latent_height, latent_width, video_length, dtype...` |
+| `prepare_latents` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:429` | `def prepare_latents(self, batch_size, num_channels_latents, latent_height, latent_width, video_length, dtype, device, ge` |
 | `use_meanflow` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:1332` | `def use_meanflow(self)` |
 | `vae_spatial_compression_ratio` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:861` | `def vae_spatial_compression_ratio(self)` |
 | `vae_temporal_compression_ratio` | method | `hyvideo/pipelines/hunyuan_video_pipeline.py:868` | `def vae_temporal_compression_ratio(self)` |
@@ -296,9 +296,9 @@
 | `HunyuanVideo_1_5_SR_Pipeline` | class | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:85` | `class HunyuanVideo_1_5_SR_Pipeline(HunyuanVideo_1_5_Pipeline)` |
 | `HunyuanVideo_1_5_SR_PipelineOutput` | class | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:81` | `class HunyuanVideo_1_5_SR_PipelineOutput(BaseOutput)` |
 | `__call__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:62` | `def __call__(self, lr_bucket)` |
-| `__call__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:165` | `def __call__(self, prompt, video_length, num_inference_steps, guidance_scale, negative_prompt...` |
+| `__call__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:165` | `def __call__(self, prompt, video_length, num_inference_steps, guidance_scale, negative_prompt, num_videos_per_prompt, ge` |
 | `__init__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:49` | `def __init__(self, lr_base_size, hr_base_size, lr_patch_size, hr_patch_size)` |
-| `__init__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:87` | `def __init__(self, vae, text_encoder, transformer, scheduler, upsampler, flow_shift, guidance_scale...` |
+| `__init__` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:87` | `def __init__(self, vae, text_encoder, transformer, scheduler, upsampler, flow_shift, guidance_scale, num_inference_steps` |
 | `_prepare_lq_cond_latents` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:148` | `def _prepare_lq_cond_latents(self, lq_latents)` |
 | `add_noise_to_lq` | method | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:142` | `def add_noise_to_lq(self, lq_latents, strength)` |
 | `expand_dims` | function | `hyvideo/pipelines/hunyuan_video_sr_pipeline.py:42` | `def expand_dims(tensor, ndim)` |
@@ -306,7 +306,7 @@
 | `retrieve_timesteps` | function | `hyvideo/pipelines/pipeline_utils.py:21` | `def retrieve_timesteps(scheduler, num_inference_steps, device, timesteps, sigmas)` |
 | `FlowMatchDiscreteScheduler` | class | `hyvideo/schedulers/scheduling_flow_match_discrete.py:63` | `class FlowMatchDiscreteScheduler(SchedulerMixin, ConfigMixin)` |
 | `FlowMatchDiscreteSchedulerOutput` | class | `hyvideo/schedulers/scheduling_flow_match_discrete.py:50` | `class FlowMatchDiscreteSchedulerOutput(BaseOutput)` |
-| `__init__` | method | `hyvideo/schedulers/scheduling_flow_match_discrete.py:86` | `def __init__(self, num_train_timesteps, shift, reverse, solver, use_flux_shift, flux_base_shift, flux_max_shift...` |
+| `__init__` | method | `hyvideo/schedulers/scheduling_flow_match_discrete.py:86` | `def __init__(self, num_train_timesteps, shift, reverse, solver, use_flux_shift, flux_base_shift, flux_max_shift, n_token` |
 | `__len__` | method | `hyvideo/schedulers/scheduling_flow_match_discrete.py:291` | `def __len__(self)` |
 | `_init_step_index` | method | `hyvideo/schedulers/scheduling_flow_match_discrete.py:196` | `def _init_step_index(self, timestep)` |
 | `_sigma_to_t` | method | `hyvideo/schedulers/scheduling_flow_match_discrete.py:143` | `def _sigma_to_t(self, sigma)` |

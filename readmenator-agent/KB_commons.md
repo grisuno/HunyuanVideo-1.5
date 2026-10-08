@@ -1,8 +1,8 @@
 # Subsystem: commons
 
 ## hyvideo/commons/__init__.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `_ntuple` (function, line 24) `def _ntuple(n)`
@@ -20,8 +20,8 @@
 - Imported by: `hyvideo/__init__.py`, `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py`, `hyvideo/models/transformers/modules/attention.py`, `hyvideo/models/transformers/modules/embed_layers.py`, `hyvideo/models/transformers/modules/mlp_layers.py`, `hyvideo/models/vision_encoder/__init__.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`
 
 ## hyvideo/commons/infer_state.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `InferState` (class, line 21) `class InferState`
@@ -31,8 +31,8 @@
 - Imported by: `generate.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`
 
 ## hyvideo/commons/parallel_states.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `ParallelDims` (class, line 24) `class ParallelDims`

@@ -1,8 +1,8 @@
 # Subsystem: utils
 
 ## hyvideo/utils/communications.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `broadcast` (function, line 24) `def broadcast(input_, group)`
@@ -26,8 +26,8 @@
 - Imported by: `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py`, `hyvideo/models/transformers/modules/attention.py`
 
 ## hyvideo/utils/data_utils.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: data_access
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `resize_and_center_crop` (function, line 20) `def resize_and_center_crop(image, target_width, target_height)`
@@ -36,8 +36,8 @@
 - Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`
 
 ## hyvideo/utils/flash_attn_no_pad.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `flash_attn_no_pad` (function, line 20) `def flash_attn_no_pad(qkv, key_padding_mask, causal, dropout_p, softmax_scale, deterministic)`
@@ -45,8 +45,8 @@
 - Imported by: `hyvideo/models/transformers/modules/attention.py`
 
 ## hyvideo/utils/infer_utils.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `torch_compile_wrapper` (function, line 19) `def torch_compile_wrapper()`
@@ -54,8 +54,8 @@
   - `wrapper` (function, line 21) `def wrapper(self)`
 
 ## hyvideo/utils/multitask_utils.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `numpy_to_pil` (function, line 23) `def numpy_to_pil(images)`

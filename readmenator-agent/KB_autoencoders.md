@@ -1,14 +1,14 @@
 # Subsystem: autoencoders
 
 ## hyvideo/models/autoencoders/__init__.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: business_logic
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`
 
 ## hyvideo/models/autoencoders/hunyuanvideo_15_vae.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: business_logic
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `DecoderOutput` (class, line 40) `class DecoderOutput(BaseOutput)`
@@ -41,11 +41,11 @@
   - `forward` (method, line 261) `def forward(self, x)`
   - `__init__` (method, line 296) `def __init__(self, in_channels, out_channels, add_temporal_upsample)`
   - `forward` (method, line 303) `def forward(self, x)`
-  - `__init__` (method, line 334) `def __init__(self, in_channels, z_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal...`
+  - `__init__` (method, line 334) `def __init__(self, in_channels, z_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, downsample_match_channel)`
   - `forward` (method, line 386) `def forward(self, x)`
-  - `__init__` (method, line 416) `def __init__(self, z_channels, out_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal...`
+  - `__init__` (method, line 416) `def __init__(self, z_channels, out_channels, block_out_channels, num_res_blocks, ffactor_spatial, ffactor_temporal, upsample_match_channel)`
   - `forward` (method, line 468) `def forward(self, z)`
-  - `__init__` (method, line 500) `def __init__(self, in_channels, out_channels, latent_channels, block_out_channels, layers_per_block...`
+  - `__init__` (method, line 500) `def __init__(self, in_channels, out_channels, latent_channels, block_out_channels, layers_per_block, ffactor_spatial, ffactor_temporal, sample_size, sample_tsize, scaling_factor, shift_factor, downsample_match_channel, upsample_match_channel)`
   - `set_tile_sample_min_size` (method, line 554) `def set_tile_sample_min_size(self, sample_size, tile_overlap_factor)`
   - `_set_gradient_checkpointing` (method, line 563) `def _set_gradient_checkpointing(self, module, value)`
   - `enable_temporal_tiling` (method, line 569) `def enable_temporal_tiling(self, use_tiling)`

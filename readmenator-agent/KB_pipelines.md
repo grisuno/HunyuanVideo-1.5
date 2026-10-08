@@ -1,18 +1,18 @@
 # Subsystem: pipelines
 
 ## hyvideo/pipelines/hunyuan_video_pipeline.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `HunyuanVideoPipelineOutput` (class, line 82) `class HunyuanVideoPipelineOutput(BaseOutput)`
   - `HunyuanVideo_1_5_Pipeline` (class, line 87) `class HunyuanVideo_1_5_Pipeline(DiffusionPipeline)`
-  - `__init__` (method, line 92) `def __init__(self, vae, text_encoder, transformer, scheduler, text_encoder_2, flow_shift, guidance_scale...`
+  - `__init__` (method, line 92) `def __init__(self, vae, text_encoder, transformer, scheduler, text_encoder_2, flow_shift, guidance_scale, num_inference_steps, embedded_guidance_scale, progress_bar_config, vision_num_semantic_tokens, vision_states_dim, glyph_byT5_v2, byt5_model, byt5_tokenizer, byt5_max_length, prompt_format, execution_device, vision_encoder, enable_offloading)`
   - `_create_scheduler` (method, line 185) `def _create_scheduler(cls, flow_shift)`
   - `_load_byt5` (method, line 194) `def _load_byt5(cls, cached_folder, glyph_byT5_v2, byt5_max_length, device)`
-  - `encode_prompt` (method, line 242) `def encode_prompt(self, prompt, device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt...`
+  - `encode_prompt` (method, line 242) `def encode_prompt(self, prompt, device, num_videos_per_prompt, do_classifier_free_guidance, negative_prompt, prompt_embeds, attention_mask, negative_prompt_embeds, negative_attention_mask, clip_skip, text_encoder, data_type)`
   - `prepare_extra_func_kwargs` (method, line 413) `def prepare_extra_func_kwargs(self, func, kwargs)`
-  - `prepare_latents` (method, line 429) `def prepare_latents(self, batch_size, num_channels_latents, latent_height, latent_width, video_length, dtype...`
+  - `prepare_latents` (method, line 429) `def prepare_latents(self, batch_size, num_channels_latents, latent_height, latent_width, video_length, dtype, device, generator, latents)`
   - `get_guidance_scale_embedding` (method, line 483) `def get_guidance_scale_embedding(self, w, embedding_dim, dtype)`
   - `guidance_scale` (method, line 517) `def guidance_scale(self)`
   - `guidance_rescale` (method, line 521) `def guidance_rescale(self)`
@@ -35,7 +35,7 @@
   - `vae_spatial_compression_ratio` (method, line 861) `def vae_spatial_compression_ratio(self)`
   - `vae_temporal_compression_ratio` (method, line 868) `def vae_temporal_compression_ratio(self)`
   - `get_latent_size` (method, line 874) `def get_latent_size(self, video_length, height, width)`
-  - `__call__` (method, line 886) `def __call__(self, prompt, aspect_ratio, video_length, prompt_rewrite, num_inference_steps, guidance_scale...`
+  - `__call__` (method, line 886) `def __call__(self, prompt, aspect_ratio, video_length, prompt_rewrite, num_inference_steps, guidance_scale, enable_sr, sr_num_inference_steps, negative_prompt, generator, seed, flow_shift, embedded_guidance_scale, reference_image, output_type, return_dict, return_pre_sr_video, enable_vae_tile_parallelism)`
   - `ideal_resolution` (method, line 1324) `def ideal_resolution(self)`
   - `ideal_task` (method, line 1328) `def ideal_task(self)`
   - `use_meanflow` (method, line 1332) `def use_meanflow(self)`
@@ -43,7 +43,7 @@
   - `load_sr_transformer_upsampler` (method, line 1416) `def load_sr_transformer_upsampler(cls, cached_folder, sr_version, transformer_dtype, device)`
   - `create_sr_pipeline` (method, line 1426) `def create_sr_pipeline(self, cached_folder, sr_version, transformer_dtype, device)`
   - `get_transformer_version` (method, line 1452) `def get_transformer_version(resolution, task, cfg_distilled, step_distilled, sparse_attn)`
-  - `create_pipeline` (method, line 1467) `def create_pipeline(cls, pretrained_model_name_or_path, transformer_version, create_sr_pipeline, transformer_dtype...`
+  - `create_pipeline` (method, line 1467) `def create_pipeline(cls, pretrained_model_name_or_path, transformer_version, create_sr_pipeline, transformer_dtype, device, transformer_init_device)`
   - `get_offloading_config` (method, line 1550) `def get_offloading_config(memory_limitation)`
   - `get_vae_inference_config` (method, line 1566) `def get_vae_inference_config(memory_limitation)`
   - `_load_text_encoders` (method, line 1582) `def _load_text_encoders(cls, pretrained_model_path, device)`
@@ -52,8 +52,8 @@
 - Imported by: `generate.py`, `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`, `train.py`
 
 ## hyvideo/pipelines/hunyuan_video_sr_pipeline.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `expand_dims` (function, line 42) `def expand_dims(tensor, ndim)`
@@ -62,18 +62,18 @@
   - `HunyuanVideo_1_5_SR_Pipeline` (class, line 85) `class HunyuanVideo_1_5_SR_Pipeline(HunyuanVideo_1_5_Pipeline)`
   - `__init__` (method, line 49) `def __init__(self, lr_base_size, hr_base_size, lr_patch_size, hr_patch_size)`
   - `__call__` (method, line 62) `def __call__(self, lr_bucket)`
-  - `__init__` (method, line 87) `def __init__(self, vae, text_encoder, transformer, scheduler, upsampler, flow_shift, guidance_scale...`
+  - `__init__` (method, line 87) `def __init__(self, vae, text_encoder, transformer, scheduler, upsampler, flow_shift, guidance_scale, num_inference_steps, embedded_guidance_scale, base_resolution, text_encoder_2, progress_bar_config, vision_num_semantic_tokens, vision_states_dim, glyph_byT5_v2, byt5_model, byt5_tokenizer, byt5_max_length, prompt_format, execution_device, vision_encoder, enable_offloading)`
   - `add_noise_to_lq` (method, line 142) `def add_noise_to_lq(self, lq_latents, strength)`
   - `_prepare_lq_cond_latents` (method, line 148) `def _prepare_lq_cond_latents(self, lq_latents)`
-  - `__call__` (method, line 165) `def __call__(self, prompt, video_length, num_inference_steps, guidance_scale, negative_prompt...`
+  - `__call__` (method, line 165) `def __call__(self, prompt, video_length, num_inference_steps, guidance_scale, negative_prompt, num_videos_per_prompt, generator, seed, embedded_guidance_scale, reference_image, lq_latents, output_type, return_dict, enable_vae_tile_parallelism)`
 - Depends on: `hyvideo/commons/__init__.py`, `hyvideo/commons/parallel_states.py`, `hyvideo/models/text_encoders/__init__.py`, `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py`, `hyvideo/models/transformers/modules/upsample.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/pipeline_utils.py`, `hyvideo/utils/data_utils.py`
 - Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`
 
 ## hyvideo/pipelines/pipeline_utils.py
-- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use...
 - Layer: utility
+- Doc: Licensed under the TENCENT HUNYUAN COMMUNITY LICENSE AGREEMENT (the "License"); you may not use this file except in comp
 - Language: py
 - Symbols:
   - `retrieve_timesteps` (function, line 21) `def retrieve_timesteps(scheduler, num_inference_steps, device, timesteps, sigmas)`
   - `rescale_noise_cfg` (function, line 86) `def rescale_noise_cfg(noise_cfg, noise_pred_text, guidance_rescale)`
-- Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`
+- Imported by: `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/hunyuan_video_pipeline.py`, `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`
