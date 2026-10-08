@@ -1,0 +1,104 @@
+# Architecture
+
+## Internal Dependencies
+
+- `generate.py` -> `hyvideo/commons/infer_state.py`
+- `generate.py` -> `hyvideo/commons/parallel_states.py`
+- `generate.py` -> `hyvideo/pipelines/hunyuan_video_pipeline.py`
+- `hyvideo/__init__.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py` -> `hyvideo/commons/parallel_states.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/commons/parallel_states.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/text_encoders/byT5/__init__.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/activation_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/attention.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/embed_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/mlp_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/modulate_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/norm_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/posemb_layers.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/models/transformers/modules/token_refiner.py`
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> `hyvideo/utils/communications.py`
+- `hyvideo/models/transformers/modules/attention.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/models/transformers/modules/attention.py` -> `hyvideo/commons/parallel_states.py`
+- `hyvideo/models/transformers/modules/attention.py` -> `hyvideo/models/transformers/modules/ssta_attention.py`
+- `hyvideo/models/transformers/modules/attention.py` -> `hyvideo/utils/communications.py`
+- `hyvideo/models/transformers/modules/attention.py` -> `hyvideo/utils/flash_attn_no_pad.py`
+- `hyvideo/models/transformers/modules/embed_layers.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/models/transformers/modules/mlp_layers.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/models/transformers/modules/mlp_layers.py` -> `hyvideo/models/transformers/modules/modulate_layers.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/activation_layers.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/attention.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/embed_layers.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/mlp_layers.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/modulate_layers.py`
+- `hyvideo/models/transformers/modules/token_refiner.py` -> `hyvideo/models/transformers/modules/norm_layers.py`
+- `hyvideo/models/transformers/modules/upsample.py` -> `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py`
+- `hyvideo/models/vision_encoder/__init__.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/commons/infer_state.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/commons/parallel_states.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/autoencoders/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/text_encoders/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/text_encoders/byT5/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/text_encoders/byT5/format_prompt.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/transformers/modules/upsample.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/models/vision_encoder/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/pipelines/hunyuan_video_sr_pipeline.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/pipelines/pipeline_utils.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/schedulers/scheduling_flow_match_discrete.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/utils/data_utils.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/utils/multitask_utils.py`
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> `hyvideo/utils/rewrite/rewrite_utils.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/commons/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/commons/parallel_states.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/models/text_encoders/__init__.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/models/transformers/modules/upsample.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/pipelines/hunyuan_video_pipeline.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/pipelines/pipeline_utils.py`
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> `hyvideo/utils/data_utils.py`
+- `hyvideo/utils/rewrite/rewrite_utils.py` -> `hyvideo/utils/rewrite/clients.py`
+- `hyvideo/utils/rewrite/rewrite_utils.py` -> `hyvideo/utils/rewrite/i2v_prompt.py`
+- `hyvideo/utils/rewrite/rewrite_utils.py` -> `hyvideo/utils/rewrite/t2v_prompt.py`
+- `train.py` -> `hyvideo/commons/parallel_states.py`
+- `train.py` -> `hyvideo/optim/muon.py`
+- `train.py` -> `hyvideo/pipelines/hunyuan_video_pipeline.py`
+
+## External Imports
+
+- `generate.py` -> argparse, copy, datetime, einops, imageio, json, loguru, os, sgl_kernel, torch, torch.distributed.checkpoint, torch.distributed.checkpoint.state_dict
+- `hyvideo/__init__.py` -> os, socket
+- `hyvideo/commons/__init__.py` -> angelslim, collections.abc, contextlib, diffusers.hooks.group_offloading, flash_attn, flash_attn_interface, flex_block_attn, itertools, os, sageattention, torch, warnings
+- `hyvideo/commons/infer_state.py` -> dataclasses, typing
+- `hyvideo/commons/parallel_states.py` -> dataclasses, os, torch.distributed, torch.distributed.device_mesh
+- `hyvideo/models/autoencoders/hunyuanvideo_15_vae.py` -> contextlib, dataclasses, diffusers.configuration_utils, diffusers.models.autoencoders.vae, diffusers.models.modeling_outputs, diffusers.models.modeling_utils, einops, loguru, math, numpy, torch, torch.nn, torch.nn.functional, typing
+- `hyvideo/models/text_encoders/__init__.py` -> copy, dataclasses, os, torch, torch.nn, transformers, transformers.utils, typing
+- `hyvideo/models/text_encoders/byT5/__init__.py` -> json, torch, torch.nn, transformers
+- `hyvideo/models/text_encoders/byT5/format_prompt.py` -> json, webcolors
+- `hyvideo/models/transformers/hunyuanvideo_1_5_transformer.py` -> diffusers.configuration_utils, diffusers.loaders.lora_base, diffusers.loaders.peft, diffusers.models, diffusers.utils, einops, json, loguru, os, pathlib, peft.utils, safetensors, safetensors.torch, torch, torch.nn, typing
+- `hyvideo/models/transformers/modules/activation_layers.py` -> torch.nn
+- `hyvideo/models/transformers/modules/attention.py` -> einops, loguru, numpy, sageattention, torch, torch.nn.attention.flex_attention, torch.nn.functional, typing
+- `hyvideo/models/transformers/modules/embed_layers.py` -> math, torch, torch.nn
+- `hyvideo/models/transformers/modules/mlp_layers.py` -> functools, torch, torch.nn
+- `hyvideo/models/transformers/modules/modulate_layers.py` -> torch, torch.nn, typing
+- `hyvideo/models/transformers/modules/norm_layers.py` -> torch, torch.nn
+- `hyvideo/models/transformers/modules/posemb_layers.py` -> functools, torch, typing
+- `hyvideo/models/transformers/modules/ssta_attention.py` -> einops, flex_block_attn, functools, math, numpy, torch
+- `hyvideo/models/transformers/modules/token_refiner.py` -> einops, torch, torch.nn, typing
+- `hyvideo/models/transformers/modules/upsample.py` -> collections.abc, dataclasses, diffusers.configuration_utils, diffusers.models, einops, enum, torch, torch.nn, torch.nn.functional
+- `hyvideo/models/vision_encoder/__init__.py` -> dataclasses, numpy, torch, torch.nn, transformers, transformers.utils, typing
+- `hyvideo/optim/muon.py` -> math, torch, torch.distributed.tensor, torch.distributed.tensor.placement_types
+- `hyvideo/pipelines/hunyuan_video_pipeline.py` -> PIL, angelslim.compressor.diffusion, dataclasses, diffusers.configuration_utils, diffusers.image_processor, diffusers.models, diffusers.schedulers, diffusers.utils, einops, inspect, loguru, numpy, os, psutil, random, re, torch, torchvision.transforms, typing
+- `hyvideo/pipelines/hunyuan_video_sr_pipeline.py` -> PIL, dataclasses, diffusers.models, diffusers.schedulers, diffusers.utils, einops, numpy, torch, torch.nn, typing
+- `hyvideo/pipelines/pipeline_utils.py` -> inspect, torch, typing
+- `hyvideo/schedulers/scheduling_flow_match_discrete.py` -> dataclasses, diffusers.configuration_utils, diffusers.schedulers.scheduling_utils, diffusers.utils, math, numpy, torch, typing
+- `hyvideo/utils/communications.py` -> torch, torch.distributed, torch.nn, typing
+- `hyvideo/utils/data_utils.py` -> PIL, numpy
+- `hyvideo/utils/flash_attn_no_pad.py` -> einops, flash_attn, flash_attn.bert_padding, flash_attn_interface
+- `hyvideo/utils/infer_utils.py` -> torch
+- `hyvideo/utils/multitask_utils.py` -> PIL, numpy, torch, typing
+- `hyvideo/utils/rewrite/clients.py` -> PIL, ast, base64, io, json, loguru, openai, os, tencentcloud.common, tencentcloud.common.common_client, tencentcloud.common.profile.client_profile, tencentcloud.common.profile.http_profile, time
+- `hyvideo/utils/rewrite/rewrite_utils.py` -> os
+- `train.py` -> argparse, dataclasses, diffusers.optimization, einops, enum, imageio, loguru, math, os, peft, random, torch, torch.distributed, torch.distributed._composable.fsdp, torch.distributed.algorithms._checkpoint.checkpoint_wrapper, torch.distributed.checkpoint, torch.distributed.checkpoint.state_dict, torch.nn, typing
